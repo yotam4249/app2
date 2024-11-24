@@ -8,7 +8,7 @@ const postSchema= new moongose.Schema({
     },
     owner: {type :String,
         required:true,
-    },
+    }
 });
 const postModel=moongose.model('Post',postSchema)
 module.exports=postModel;

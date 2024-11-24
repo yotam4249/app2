@@ -7,8 +7,11 @@ router.get("/", Post.getPostBySender);
 
 router.post("/",Post.createPost);
 
-router.delete("/",Post.deletePost);
+router.put("/:id",Post.updatePost)
+
+router.delete("/",Post.deleteAllPosts);
 
 router.delete("/:id",Post.deletePostById);
+
 
 module.exports=router;

@@ -18,6 +18,18 @@ Content-Type: application/json
 "owner": "POP"
 } 
 
+###
+  
+PUT  http://localhost:3000/posts/674351dc40008d360d8ca509
+Content-Type: application/json
+
+{
+"title": "Updated File",
+"content": "This is my second post!",
+"owner": "ELI/YOT"
+} 
+
+
 
 ###
 
@@ -26,4 +38,4 @@ DELETE  http://localhost:3000/posts
 
 ###
 
-DELETE  http://localhost:3000/posts/124124123
+DELETE  http://localhost:3000/posts/67434c5653efbe8185945b36

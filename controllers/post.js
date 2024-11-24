@@ -32,14 +32,30 @@ const createPost= async(req,res)=>{
 
 };
 
-const deletePost= (req,res)=>{
-    console.log("post deleted");
-    res.send("post deleted")
-};
-
-const deletePostById= (req,res)=>{
-    console.log("post deleted By is");
+const deletePostById= async (req,res)=>{
+    const item = await postModel.findByIdAndDelete(req.params.id)
+    console.log("Post deleted by ID")
     res.send("post deleted by id")
 };
 
-module.exports={getAllPosts,createPost,deletePost,getPostBySender,deletePostById};
+const deleteAllPosts = async(req,res)=>{
+    const item = await postModel.deleteMany({})
+    console.log("All documents deleted")
+    res.send("All items deleted from database")
+}
+
+const updatePost = async(req,res)=>{
+    const data = req.body
+    const item = await postModel.findByIdAndUpdate(req.params.id,{title:data.title,content:data.content,owner:data.owner})
+    console.log("Item replaced")
+    res.send("Item replaced")
+}
+
+module.exports={
+    getAllPosts,
+    createPost,
+    getPostBySender,
+    deletePostById,
+    deleteAllPosts,
+    updatePost
+};
