@@ -1,3 +1,4 @@
+const { error } = require("console");
 const postModel = require("../models/posts_model");
 const posts_model = require("../models/posts_model");
 
@@ -10,17 +11,17 @@ const getAllPosts= async(req,res)=>{
 };
 
 const getPostBySender= async(req,res)=>{
-    const senderFilter=req.query.owner;
-    try{
-        if(senderFilter){
-            const postsbysender=await postModel.find({owner:senderFilter});
-            res.status(200).send(postsbysender);
-           
-        }else{
-            const postsbysender=await postModel.find();
-            res.status(200).send(postsbysender);    
-        }
-        }catch(error){res.status(400).send(error.message)};
+    const { owner } = req.query;
+    if(!owner){
+        const data = await postModel.find()
+        res.status(200).send(data)
+    }
+    else
+    {
+        const data = await postModel.find({owner:owner})
+        res.status(200).send(data)
+    }
+
 };
 
 const createPost= async(req,res)=>{
