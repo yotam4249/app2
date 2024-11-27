@@ -42,3 +42,36 @@ DELETE  http://localhost:3000/posts/67434c5653efbe8185945b36
 
 ###
 
+
+GET http://localhost:3000/comments
+
+###
+
+GET http://localhost:3000/comments?post_id=adawda14123dawdwq21413241
+
+
+###
+  
+POST  http://localhost:3000/comments
+Content-Type: application/json
+
+{
+"post_id": "adawda14123dawdwq21413241",   
+"comment": "This is my first comment!",
+}
+###
+  
+PUT  http://localhost:3000/comments/674351dc40008d360d8ca509
+Content-Type: application/json
+
+{
+"post_id": "adawda14123dawdwq21awdawdawdwadawekfmwawdkl413241",   
+"comment": "This is my firsdmaw,dkmawkldadwt comment!",
+} 
+
+
+
+###
+
+DELETE  http://localhost:3000/comments/awdawdewjfj23oi4mo32s
+
