@@ -1,7 +1,6 @@
 const express=require("express");
 const router= express.Router();
 const Post =require("../controllers/post")
-//router.get("/:owner", Post.getPostBySender);
 
 router.get("/", Post.getPostBySender);
 

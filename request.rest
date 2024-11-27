@@ -39,3 +39,6 @@ DELETE  http://localhost:3000/posts
 ###
 
 DELETE  http://localhost:3000/posts/67434c5653efbe8185945b36
+
+###
+

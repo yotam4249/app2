@@ -1,4 +1,8 @@
+const { json } = require("body-parser");
+const { default: mongoose } = require("mongoose");
 const moongose=require("mongoose")
+
+
 const postSchema= new moongose.Schema({
     title: {type :String,
         required:true,
